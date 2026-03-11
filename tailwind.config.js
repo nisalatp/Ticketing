@@ -13,11 +13,12 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Titillium Web', 'Figtree', ...defaultTheme.fontFamily.sans],
+                poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                'csired': '#ED1C24',
-                'csidark': '#343741',
+                'csired': '#E55F26', // IIMT Orange
+                'csidark': '#201C57', // IIMT Navy Blue
             },
         },
     },

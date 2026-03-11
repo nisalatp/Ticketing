@@ -18,7 +18,7 @@ defineProps({
     <div class="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans">
         <!-- Subtle Background Decorations -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-            <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-red-50 rounded-full blur-[120px] opacity-40"></div>
+            <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-orange-50 rounded-full blur-[120px] opacity-40"></div>
             <div class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-slate-100 rounded-full blur-[120px] opacity-40"></div>
         </div>
 
@@ -26,7 +26,7 @@ defineProps({
             <!-- Logo Section -->
             <div class="flex justify-center animate-in fade-in duration-700">
                 <img v-if="$page.props.branding.logo_url" :src="$page.props.branding.logo_url" :alt="$page.props.branding.name" class="h-20 w-auto" />
-                <div v-else class="w-16 h-16 bg-csired rounded-2xl flex items-center justify-center shadow-lg shadow-red-200">
+                <div v-else class="w-16 h-16 bg-csired rounded-2xl flex items-center justify-center shadow-lg shadow-orange-200">
                     <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path>
                     </svg>
@@ -35,7 +35,7 @@ defineProps({
 
             <!-- Branding Section -->
             <div class="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
-                <h2 class="text-csired font-bold tracking-[0.2em] uppercase text-xs">{{ $page.props.branding.tagline }}</h2>
+                <h2 class="text-csired font-semibold tracking-[0.2em] uppercase text-xs">{{ $page.props.branding.tagline }}</h2>
                 <h1 class="text-4xl md:text-5xl font-bold text-csidark tracking-tight">
                     {{ $page.props.branding.name }}
                 </h1>
@@ -53,7 +53,7 @@ defineProps({
                 <div class="bg-white rounded-[2.2rem] p-10 space-y-8">
                     <div class="flex justify-center">
                         <div class="p-5 flex items-center justify-center">
-                             <div class="w-16 h-16 bg-csired rounded-2xl flex items-center justify-center shadow-lg shadow-red-200">
+                             <div class="w-16 h-16 bg-csired rounded-2xl flex items-center justify-center shadow-lg shadow-orange-200">
                                 <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path>
                                 </svg>
@@ -65,7 +65,7 @@ defineProps({
                         <a
                             v-if="$page.props.azureAuthEnabled"
                             :href="route('login.microsoft')"
-                            class="inline-flex items-center justify-center w-full px-8 py-5 text-white font-semibold rounded-2xl shadow-xl transition-all duration-300 transform hover:-translate-y-1 active:scale-[0.98] group bg-csired hover:bg-[#D31920] shadow-red-100"
+                            class="inline-flex items-center justify-center w-full px-8 py-5 text-white font-semibold rounded-2xl shadow-xl transition-all duration-300 transform hover:-translate-y-1 active:scale-[0.98] group bg-csired hover:bg-csired/90 shadow-orange-100"
                         >
                             <svg class="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3.5 18l1.5-6h-3l6-7.5-1.5 6h3l-6 7.5z"/>
@@ -80,7 +80,7 @@ defineProps({
                             Sign in with Credentials
                         </Link>
                         
-                        <p class="text-[0.65rem] text-slate-400 font-bold uppercase tracking-widest">
+                        <p class="text-[0.65rem] text-slate-400 font-semibold uppercase tracking-widest">
                             Authorized Personnel Only &bull; Secure Access
                         </p>
                     </div>
@@ -88,7 +88,7 @@ defineProps({
             </div>
 
             <!-- Footer Info -->
-            <div class="pt-8 text-slate-400 text-[0.7rem] font-bold uppercase tracking-widest animate-in fade-in duration-1000 delay-500">
+            <div class="pt-8 text-slate-400 text-[0.7rem] font-semibold uppercase tracking-widest animate-in fade-in duration-1000 delay-500">
                 &copy; {{ new Date().getFullYear() }} {{ $page.props.branding.name }}.
             </div>
         </div>

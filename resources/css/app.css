@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Titillium+Web:wght@400;600;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-    --csi-red: #ED1C24;
-    /* Corporate Red */
-    --csi-red-dark: #D31920;
-    --csi-red-light: #FEF2F2;
-    --csi-accent: #ED1C24;
+    --csi-red: #E55F26;
+    /* IIMT Orange */
+    --csi-red-dark: #C44E1D;
+    --csi-red-light: #FFF7ED;
+    --csi-accent: #E55F26;
+    --csi-navy: #201C57;
+    /* IIMT Navy Blue */
 
     --bg-main: #f8fafc;
     --bg-card: #ffffff;

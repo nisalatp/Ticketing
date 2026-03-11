@@ -24,6 +24,10 @@ class UserController extends Controller
     {
         $query = User::with(['departments', 'topics']);
 
+        if (!$request->user()->isSuperAdmin()) {
+            $query->excludeSuperAdmin();
+        }
+
         if ($request->has('search')) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
@@ -81,6 +85,10 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
+        if ($user->isSuperAdmin() && !$request->user()->isSuperAdmin()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $request->validate([
             'memberships' => 'array',
             'memberships.*.department_id' => 'required|exists:departments,id',

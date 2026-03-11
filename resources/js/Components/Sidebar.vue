@@ -53,10 +53,10 @@ const adminConfigNavigation = [
         <!-- Logo Area -->
         <div class="flex h-16 shrink-0 items-center border-b border-slate-100 transition-all duration-300" :class="[collapsed ? 'px-0 justify-center' : 'px-6']">
             <Link :href="route('dashboard')" class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-csired rounded-xl flex items-center justify-center shadow-lg shadow-red-500/20 transform transition-transform hover:scale-105">
-                    <span class="text-white font-black text-xl">S</span>
+                <div class="w-10 h-10 bg-csidark rounded-xl flex items-center justify-center shadow-lg shadow-blue-900/20 transform transition-transform hover:scale-105">
+                    <span class="text-white font-bold text-xl">I</span>
                 </div>
-                <span v-if="!collapsed" class="font-black text-slate-800 tracking-tighter text-lg">Management Services</span>
+                <span v-if="!collapsed" class="font-bold text-csidark tracking-tighter text-lg">IIMT Campus</span>
             </Link>
         </div>
 
@@ -64,7 +64,7 @@ const adminConfigNavigation = [
         <nav class="flex-1 overflow-y-auto p-4 space-y-8 no-scrollbar">
             <!-- Employee Section -->
             <div>
-                <h3 v-if="!collapsed" class="px-2 text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Portal</h3>
+                <h3 v-if="!collapsed" class="px-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Portal</h3>
                 <div class="space-y-1.5" :class="{ 'flex flex-col items-center': collapsed }">
                     <Link
                         v-for="item in navigation"
@@ -87,7 +87,7 @@ const adminConfigNavigation = [
 
             <!-- Agent Section -->
             <div v-if="$page.props.auth.user.is_agent || $page.props.auth.user.is_admin">
-                <h3 v-if="!collapsed" class="px-2 text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Agent Workspace</h3>
+                <h3 v-if="!collapsed" class="px-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Agent Workspace</h3>
                 <div class="space-y-1.5" :class="{ 'flex flex-col items-center': collapsed }">
                     <Link
                         v-for="item in agentNavigation"
@@ -111,7 +111,7 @@ const adminConfigNavigation = [
             <!-- Admin Section -->
             <div v-if="$page.props.auth.user.is_admin || $page.props.auth.user.is_manager" class="space-y-8">
                 <div>
-                    <h3 v-if="!collapsed" class="px-2 text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Management</h3>
+                    <h3 v-if="!collapsed" class="px-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Management</h3>
                     <div class="space-y-1.5" :class="{ 'flex flex-col items-center': collapsed }">
                         <Link
                             v-for="item in adminManagementNavigation"
@@ -133,7 +133,7 @@ const adminConfigNavigation = [
                 </div>
 
                 <div>
-                    <h3 v-if="!collapsed" class="px-2 text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Organization</h3>
+                    <h3 v-if="!collapsed" class="px-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Organization</h3>
                     <div class="space-y-1.5" :class="{ 'flex flex-col items-center': collapsed }">
                         <Link
                             v-for="item in adminConfigNavigation"
@@ -165,8 +165,8 @@ const adminConfigNavigation = [
                     {{ $page.props.auth.user.name.charAt(0) }}
                 </div>
                 <div v-if="!collapsed" class="flex-1 min-w-0">
-                    <p class="text-xs font-black text-slate-900 truncate uppercase tracking-wider">{{ $page.props.auth.user.name }}</p>
-                    <p class="text-[10px] text-slate-500 truncate font-bold uppercase tracking-widest">{{ $page.props.auth.user.job_title || 'Employee' }}</p>
+                    <p class="text-xs font-bold text-csidark truncate uppercase tracking-wider">{{ $page.props.auth.user.name }}</p>
+                    <p class="text-[10px] text-slate-500 truncate font-semibold uppercase tracking-widest">{{ $page.props.auth.user.job_title || 'Employee' }}</p>
                 </div>
             </div>
         </div>
